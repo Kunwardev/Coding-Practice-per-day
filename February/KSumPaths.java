@@ -6,26 +6,26 @@ import DataStructure.TreeNode;
 
 public class KSumPaths {
 
-    private int sumKUtil(TreeNode root, int k, int sum)
-    {
+    // This is the preferred method as it uses PrefixSum Technique and does not do much recursion
+    // that was done in the first commit of this problem
+    private int sumKUtil(TreeNode root, int k, int sum, HashMap<Integer, Integer> prefixSum){
         if(root == null)
             return 0;
         int pathCount = 0;
         sum += root.data;
         if(sum == k)
             pathCount++;
-        pathCount += sumKUtil(root.left, k, sum);
-        pathCount += sumKUtil(root.right, k, sum);
+        pathCount += prefixSum.getOrDefault(sum-k, 0);
+        prefixSum.put(sum, prefixSum.getOrDefault(sum, 0)+1);
+        pathCount += sumKUtil(root.left, k, sum, prefixSum);
+        pathCount += sumKUtil(root.right, k, sum, prefixSum);
+        prefixSum.put(sum, prefixSum.get(sum)-1);
         return pathCount;
     }
 
     public int sumK(TreeNode root, int k) {
-        if(root == null)
-            return 0;
-        int result = sumKUtil(root, k, 0);
-        result += sumK(root.left, k);
-        result += sumK(root.right, k);
-        return result;
+        HashMap<Integer, Integer> prefixSum = new HashMap<>();
+        return sumKUtil(root, k, 0, prefixSum);
     }
 
     public static void main(String[] args) {
