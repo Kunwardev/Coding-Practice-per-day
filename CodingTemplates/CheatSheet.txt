@@ -11,6 +11,14 @@ import java.util.Set;
 import java.util.Stack;
 
 public class CheatSheet {
+    //-----------------------------
+    //Checking Overflow
+    //-----------------------------
+    finalNum = finalNum/10;
+        if(finalNum > Integer.MAX_VALUE || finalNum<Integer.MIN_VALUE){
+            return 0;
+        }
+
     //------------------------------ 
     //Two pointers: one input, opposite ends
     //-------------------------------
