@@ -2,6 +2,9 @@ package March;
 
 public class CountAllPalindromesInAString {
     
+    // Another way is to use DP, just like for Longest Palindrome SubSequence
+
+    // Using Recursion
     private int countPalindromeFromCenter(String s, int left, int right){
         int count = 0;
         int length = s.length();
