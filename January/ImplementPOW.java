@@ -15,7 +15,8 @@ public class ImplementPOW {
 
     public static void main(String[] args) {
         ImplementPOW p = new ImplementPOW();
-        p.power(5, 2);
+        System.out.println(p.power(5, 2));
+        System.out.println(p.power(5, 1));
     }
 
 }

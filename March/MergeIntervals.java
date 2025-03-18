@@ -23,7 +23,7 @@ public class MergeIntervals{
         for(int i=0;i<interval.length;i++){
             System.out.println(interval[i][0]+" "+interval[i][1]);
         }
-        System.err.println("-------");
+        System.out.println("-------");
     }
 
     public static void main(String[] args) {
