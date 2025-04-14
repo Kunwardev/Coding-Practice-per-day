@@ -26,4 +26,8 @@ public class GraphNode {
         this.list.get(i).add(j);
     }
 
+    public void addWeightedEdge(int i, int j, int w){
+        
+    }
+
 }
