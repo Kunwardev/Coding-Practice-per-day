@@ -54,6 +54,20 @@ public class CheatSheet {
     }
 
     //------------------------------ 
+    //Two pointers: Reversing String
+    //-------------------------------
+    public String function(String s){
+        char[] sArr = s.toCharArray();
+        int start = 0, end = s.length()-1;
+        while(start < end){
+            char temp = sArr[start];
+            sArr[start] = sArr[end];
+            sArr[end] = temp;
+        }
+        return new String(sArr);
+    }
+
+    //------------------------------ 
     //Two pointers: two inputs, exhaust both
     //------------------------------ 
     public int fn(int[] arr1, int[] arr2) {
