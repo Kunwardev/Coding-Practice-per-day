@@ -129,6 +129,17 @@ public class CheatSheet {
         return prefix;
     }
 
+    //--------------------------------
+    // Getting all the sum in ArrayList
+    //--------------------------------
+    for(int i=0;i<n;i++){
+        int currentSum = 0;
+        for(int j=i;j<n;j++){
+            currentSum += arr[j];
+            arrayList.add(currentSum);
+        }
+    }
+
     //------------------------------ 
     //Efficient string building
     //------------------------------ 

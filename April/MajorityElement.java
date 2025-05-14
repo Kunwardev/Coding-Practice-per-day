@@ -1,8 +1,7 @@
 package April;
 
 public class MajorityElement {
-    
-    private int function(int[] arr){
+    public int function(int[] arr){
         int n = arr.length;
         int count = 0, major = 0;
         for(int a: arr){
